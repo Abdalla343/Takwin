@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School App - Login</title>
+  <link rel="stylesheet" href="/frontend/styles.css">
+  <script defer src="/frontend/js/api.js"></script>
+  <script defer src="/frontend/js/auth.js"></script>
+  <script>
+    // Redirect if already logged in
+    document.addEventListener('DOMContentLoaded', () => {
+      const token = localStorage.getItem('token');
+      const role = localStorage.getItem('role');
+      if (token && role === 'teacher') window.location.href = '/frontend/teacher.html';
+      if (token && role === 'student') window.location.href = '/frontend/student.html';
+    });
+  </script>
+  <style>
+    .container { max-width: 420px; margin: 40px auto; padding: 24px; background: #fff; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+    h1 { margin: 0 0 12px; }
+    label { display: block; margin: 12px 0 6px; }
+    input, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; }
+    button { width: 100%; padding: 10px; margin-top: 14px; background: #2563eb; color: #fff; border: 0; border-radius: 8px; cursor: pointer; }
+    .link { text-align: center; margin-top: 10px; }
+    .error { color: #b91c1c; margin-top: 8px; }
+  </style>
+  <link rel="icon" href="data:,">
+  <link rel="prefetch" href="/frontend/teacher.html">
+  <link rel="prefetch" href="/frontend/student.html">
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <label for="email">Email</label>
+      <input id="email" type="email" required />
+
+      <label for="password">Password</label>
+      <input id="password" type="password" required />
+
+      <button type="submit">Login</button>
+      <div id="loginError" class="error"></div>
+    </form>
+    <div class="link">
+      <a href="/frontend/register.html">Create an account</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="/frontend/styles.css">
+  <script defer src="/frontend/js/api.js"></script>
+  <script defer src="/frontend/js/student.js"></script>
+  <style>
+    .container { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .card { background: #fff; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.08); padding: 16px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+    .badge { background: #2563eb; color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 12px; }
+  </style>
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>My Grades</h1>
+      <div>
+        <span id="studentName" class="badge"></span>
+        <button onclick="logout()">Logout</button>
+      </div>
+    </header>
+
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Class</th>
+            <th>Assignment</th>
+            <th>Grade</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="gradesTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

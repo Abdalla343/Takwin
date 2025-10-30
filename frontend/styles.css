@@ -1,0 +1,5 @@
+body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; background: #f6f7fb; color: #111827; }
+a { color: #2563eb; text-decoration: none; }
+button { transition: background .15s ease; }
+button:hover { filter: brightness(0.96); }
+select[multiple] { height: 180px; }
